@@ -1,6 +1,3 @@
-package labFP2;
-
-
 import java.util.*;
 public class DemoBatalla {
     public static void main(String[] args) {
@@ -9,7 +6,6 @@ public class DemoBatalla {
         String nomb, col;
         int fil, punt;
         boolean est;
-
         for (int i = 0; i < misNaves.length; i++) {
             System.out.println("Nave " + (i + 1));
             System.out.print("Nombre: ");
@@ -22,9 +18,7 @@ public class DemoBatalla {
             est = sc.nextBoolean();
             System.out.print("Puntos: ");
             punt = sc.nextInt();
-
             misNaves[i] = new Nave(); 
-
             misNaves[i].setNombre(nomb);
             misNaves[i].setFila(fil);
             misNaves[i].setColumna(col);
@@ -33,7 +27,20 @@ public class DemoBatalla {
         }
 
         System.out.println("\nNaves creadas:");
-        //mostrarNaves(misNaves);
+        mostrarNaves(misNaves);
+       //mostrarPorNombre(misNaves);
+       // mostrarPorPuntos(misNaves);
+       // System.out.println("\nNave con mayor número de puntos: " + mostrarMayorPuntos(misNaves).getNombre());
     }
+    public static void mostrarNaves(Nave[] flota) {
+        for (Nave nave : flota) {
+            if (nave != null) {
+                System.out.println("Nombre: " + nave.getNombre() + ", Fila: " + nave.getFila() +
+                        ", Columna: " + nave.getColumna() + ", Estado: " + nave.getEstado() +
+                        ", Puntos: " + nave.getPuntos());
+            }
+        }
+    }
+ 
 
 }
